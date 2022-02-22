@@ -12,6 +12,10 @@
     </div>
 </div>
 <div class="equipos">
-    <app-equipo></app-equipo>
-    <app-equipo></app-equipo>
+    <app-equipo [equipo]="equipoLocal"
+                (canasta)="getCanastaLocal($event)"></app-equipo>
+    <app-equipo [equipo]="equipoVisitante"
+                (canasta)="getCanastaVisitante($event)"></app-equipo>
 </div>
+<app-top-score [equipoLocal]="equipoLocal.jugadores"
+               [equipoVisitante]="equipoVisitante.jugadores"></app-top-score>

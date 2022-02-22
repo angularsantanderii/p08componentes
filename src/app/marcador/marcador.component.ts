@@ -40,4 +40,22 @@ export class MarcadorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getCanastaLocal(dataCanasta: any) {
+    this.puntosLocales += dataCanasta.puntos;
+    this.equipoLocal.jugadores.forEach((elem: any) => {
+        if(elem.nombre === dataCanasta.nombreJugador) {
+          elem.puntos += dataCanasta.puntos;
+        }
+    });
+  }
+
+  getCanastaVisitante(dataCanasta: any) {
+    this.puntosVisitantes += dataCanasta.puntos;
+    this.equipoVisitante.jugadores.forEach((elem: any) => {
+        if(elem.nombre === dataCanasta.nombreJugador) {
+          elem.puntos += dataCanasta.puntos;
+        }
+    });
+  }
+
 }
